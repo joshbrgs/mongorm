@@ -18,7 +18,7 @@ func Connect(uri string) (*mongo.Client, context.Context, error) {
 	client, err := mongo.Connect(ctx, clientOpts)
 	if err != nil {
 		cancel()
-		log.Fatal(err)
+		log.Fatalf("Could not connect with uri: %s, and err: %s", uri, err)
 	}
 
 	if err = client.Ping(ctx, nil); err != nil {
