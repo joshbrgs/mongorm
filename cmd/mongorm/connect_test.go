@@ -35,7 +35,7 @@ func TestConnect(t *testing.T) {
 				}
 			}()
 
-			got, err := Connect(tt.args.uri)
+			got, ctx, err := Connect(tt.args.uri)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Connect() error = %v, wantErr %v", err, tt.wantErr)
 				return
